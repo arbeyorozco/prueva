@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayuda - Devoluciones | ModaStyle</title>
+  <link rel="stylesheet" href="devoluciones.css" />
+</head>
+<body>
+  <section class="devoluciones">
+    <h1>Ayuda con Devoluciones</h1>
+
+    <div class="faq">
+      <h2>Preguntas Frecuentes sobre Devoluciones</h2>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Cuál es el plazo para devolver un producto?</h3>
+        <p class="respuesta">Tienes hasta 15 días naturales desde la recepción del pedido para solicitar una devolución.</p>
+      </div>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Cuáles productos no tienen devolución?</h3>
+        <p class="respuesta">Por motivos de higiene, no aceptamos devoluciones de ropa interior ni productos en liquidación.</p>
+      </div>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Cómo solicito una devolución?</h3>
+        <p class="respuesta">Ingresa a tu cuenta, ve a "Mis pedidos", selecciona el producto y haz clic en "Solicitar devolución".</p>
+      </div>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Cuánto tiempo tarda el reembolso?</h3>
+        <p class="respuesta">El reembolso se realiza en un plazo de 5 a 10 días hábiles luego de recibir el producto devuelto.</p>
+      </div>
+    </div>
+
+    <div class="contacto">
+      <h2>¿Tienes otra duda sobre devoluciones?</h2>
+      <form id="formDevolucion">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo electrónico" required />
+        <textarea name="mensaje" placeholder="Escribe tu consulta aquí..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="mensajeConfirmacion" style="display: none;">¡Gracias por tu mensaje! Te contactaremos pronto.</p>
+    </div>
+  </section>
+
+  <script src="devoluciones.js"></script>
+  <a href="../index.html" class="boton-volver">Volver al inicio</a>
+</body>
+</html>

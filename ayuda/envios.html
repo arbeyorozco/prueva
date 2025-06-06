@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayuda - Envíos | ModaStyle</title>
+  <link rel="stylesheet" href="envios.css" />
+</head>
+<body>
+  <section class="envios">
+    <h1>Ayuda con Envíos</h1>
+
+    <div class="faq">
+      <h2>Preguntas Frecuentes sobre Envíos</h2>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Cuánto tarda el envío?</h3>
+        <p class="respuesta">El tiempo de entrega varía entre 3 y 7 días hábiles, dependiendo de tu ubicación.</p>
+      </div>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Puedo rastrear mi pedido?</h3>
+        <p class="respuesta">Sí, te enviaremos un número de seguimiento por correo cuando tu pedido sea enviado.</p>
+      </div>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Realizan envíos internacionales?</h3>
+        <p class="respuesta">Actualmente solo realizamos envíos dentro del país. Estamos trabajando para expandirnos internacionalmente.</p>
+      </div>
+
+      <div class="pregunta" onclick="toggleRespuesta(this)">
+        <h3>¿Qué pasa si no estoy en casa al momento de la entrega?</h3>
+        <p class="respuesta">La empresa de mensajería realizará hasta 2 intentos de entrega. Si no se concreta, el paquete se enviará al centro de distribución más cercano.</p>
+      </div>
+    </div>
+
+    <div class="contacto">
+      <h2>¿Tienes otra duda sobre tu envío?</h2>
+      <form id="formEnvio">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo electrónico" required />
+        <textarea name="mensaje" placeholder="Escribe tu consulta aquí..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="mensajeConfirmacion" style="display: none;">¡Gracias por escribirnos! Te responderemos pronto.</p>
+    </div>
+  </section>
+
+  <script src="envios.js"></script>
+</body>
+</html>
+
+  <a href="../index.html" class="boton-volver">Volver al inicio</a>
+</body>
+</html>
