@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nexowear - Tu tienda de ropa online</title>
+    <!-- Enlaces a archivos CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">nexowear</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="/categorias/mujeres.html">Mujer</a></li>
+                     <li><a href="/categorias/hombres.html">Hombre</a></li>
+                    <li><a href="/categorias/ninos.html">Niños</a></li>
+                    <li><a href="/categorias/accesorios.html">Accesorios</a></li>
+                    <li><a href="https://wa.me/573205177709" target="_blank"> WhatsApp</a></li>
+                    <li class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                        
+                        <div class="cart-dropdown" id="cart-dropdown">
+                            <h3>Carrito de Compras</h3>
+                            <div class="cart-items" id="cart-items">
+                                <!-- Los items del carrito se cargarán aquí dinámicamente -->
+                                <p id="empty-cart-message">Tu carrito está vacío</p>
+                            </div>
+                            <div class="cart-total">
+                                <span>Total:</span>
+                                <span id="cart-total-price">$0.00</span>
+                            </div>
+                            <button class="checkout-btn">Proceder al pago</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubre la nueva colección</h1>
+            <p>Las mejores prendas y accesorios para renovar tu estilo</p>
+            <a href="#productos" class="btn">Comprar ahora</a>
+        </div>
+    </section>
+    
+    <section id="productos" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Productos destacados</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/imagenes/Camiseta  Blanca.jpg" alt="Camiseta blanca básica" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Camiseta Básica Blanca</h3>
+                        <p class="product-price">$25.99</p>
+                        <button class="btn add-to-cart" data-id="1" data-name="Camiseta Básica Blanca" data-price="25.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/imagenes/Jeans azul oscuro.jpg" alt="Jeans azul oscuro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Jeans Premium Azul</h3>
+                        <p class="product-price">$59.99</p>
+                        <button class="btn add-to-cart" data-id="2" data-name="Jeans Premium Azul" data-price="59.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/imagenes/traje negro .webp" alt="Vestido elegante negro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Traje Elegante Negro</h3>
+                        <p class="product-price">$309.99</p>
+                        <button class="btn add-to-cart" data-id="3" data-name="Vestido Elegante Negro" data-price="79.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/imagenes/sudadera gris.webp" alt="Sudadera gris con capucha" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Sudadera Gris con Capucha</h3>
+                        <p class="product-price">$49.99</p>
+                        <button class="btn add-to-cart" data-id="4" data-name="Sudadera Gris con Capucha" data-price="49.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Nuevos Arrivals</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/imagenes/chaqueta marron.webp" alt="Chaqueta de cuero marrón" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Chaqueta de Cuero Marrón</h3>
+                        <p class="product-price">$129.99</p>
+                        <button class="btn add-to-cart" data-id="5" data-name="Chaqueta de Cuero Marrón" data-price="129.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/imagenes/zapatos blancos.jpg" alt="Zapatos deportivos blancos" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Zapatos Deportivos Blancos</h3>
+                        <p class="product-price">$89.99</p>
+                        <button class="btn add-to-cart" data-id="6" data-name="Zapatos Deportivos Blancos" data-price="89.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/imagenes/bolso negro.webp" alt="Bolso de cuero negro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Bolso de Cuero Negro</h3>
+                        <p class="product-price">$75.99</p>
+                        <button class="btn add-to-cart" data-id="7" data-name="Bolso de Cuero Negro" data-price="75.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/imagenes/gorra negra.jpeg" alt="Gorra deportiva negra" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Gorra Deportiva Negra</h3>
+                        <p class="product-price">$24.99</p>
+                        <button class="btn add-to-cart" data-id="8" data-name="Gorra Deportiva Negra" data-price="24.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Explora nuestras categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="/api/placeholder/600/300" alt="Categoría Mujer" class="category-img">
+                    <div class="category-overlay">Mujer</div>
+                </div>
+                <div class="category-card">
+                    <img src="/api/placeholder/600/300" alt="Categoría Hombre" class="category-img">
+                    <div class="category-overlay">Hombre</div>
+                </div>
+                <div class="category-card">
+                    <img src="/api/placeholder/600/300" alt="Categoría Niños" class="category-img">
+                    <div class="category-overlay">Niños</div>
+                </div>
+                <div class="category-card">
+                    <img src="/api/placeholder/600/300" alt="Categoría Accesorios" class="category-img">
+                    <div class="category-overlay">Accesorios</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <p>Recibe nuestras novedades y ofertas exclusivas directamente en tu correo</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+    
+    <div class="notification" id="notification">
+        <p>Producto añadido al carrito</p>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>nexowear</h3>
+                    <p>Tu tienda de confianza para encontrar las mejores prendas y accesorios con estilo y calidad.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Novedades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Email: jarlinorozcoocampo@gmail.com</li>
+                        <li>Teléfono: 320 517 77 09</li>
+                        <li>Dirección: Argelia antioquia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 nexowear. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlaces a archivos JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
