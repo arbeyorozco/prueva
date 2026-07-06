@@ -1,67 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Categoría Mujer</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-family: sans-serif;
-    }
-
-    .galeria {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px;
-    }
-
-    .galeria img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .boton-volver {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    .boton-volver:hover {
-      background-color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nexowear - Tu tienda de ropa online</title>
+    <!-- Enlaces a archivos CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">nexowear</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="/nexowear/categorias/mujeres.html">Mujer</a></li>
+                     <li><a href="/nexowear/categorias/hombres.html">Hombre</a></li>
+                    <li><a href="/nexowear/categorias/ninos.html">Niños</a></li>
+                    <li><a href="/nexowear/categorias/accesorios.html">Accesorios</a></li>
+                    <li><a href="https://wa.me/573205177709" target="_blank"> Proceder al Pago</a></li>
+                    <li class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                        
+                        <div class="cart-dropdown" id="cart-dropdown">
+                            <h3>Carrito de Compras</h3>
+                            <div class="cart-items" id="cart-items">
+                                <!-- Los items del carrito se cargarán aquí dinámicamente -->
+                                <p id="empty-cart-message">Tu carrito está vacío</p>
+                            </div>
+                            <div class="cart-total">
+                                <span>Total:</span>
+                                <span id="cart-total-price">$0.00</span>
+                            </div>
+                            <button class="checkout-btn">Proceder al pago</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Expresa Tu Esencia</h1>
+            <p>Moda Femenina Creada Para Mujeres Que Marcan tendencia</p>
+            
+        </div>
+    </section>
+    
+    <section id="productos" class="featured-section">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="imagen5.webp" alt="Pantalones de tiro alto" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Pantalones de tiro alto</h3>
+                        <p class="product-price">$85.99</p>
+                        <button class="btn add-to-cart" data-id="m1" data-name="Pantalones de tiro alto" data-price="85.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagen7.jpg" alt="suéter blanco" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">suéter blanco</h3>
+                        <p class="product-price">$59.99</p>
+                        <button class="btn add-to-cart" data-id="m2" data-name="suéter blanco" data-price="59.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagen8.webp" alt="Vestido elegante negro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Vestido Elegante Negro</h3>
+                        <p class="product-price">$209.99</p>
+                        <button class="btn add-to-cart" data-id="m3" data-name="Vestido Elegante Negro" data-price="209.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagen6.avif" alt="Chaqueta Denim Oversize" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Chaqueta Denim Oversize</h3>
+                        <p class="product-price">$49.99</p>
+                        <button class="btn add-to-cart" data-id="m4" data-name="Chaqueta Denim Oversize" data-price="49.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-section">
+        <div class="container">
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="imajen 1.avif" alt="Chaqueta de cuero marrón" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Conjunto Tropical</h3>
+                        <p class="product-price">$129.99</p>
+                        <button class="btn add-to-cart" data-id="m5" data-name="Conjunto Tropical" data-price="129.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imajen 2.jpg" alt="Zapatos deportivos blancos" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Set Streetwear verde Bosque</h3>
+                        <p class="product-price">$129.99</p>
+                        <button class="btn add-to-cart" data-id="m6" data-name="Set Streetwear verde Bosque" data-price="89.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imajen3.webp" alt="Bolso de cuero negro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Blazer Estructurado Negro</h3>
+                        <p class="product-price">$75.99</p>
+                        <button class="btn add-to-cart" data-id="m7" data-name="Blazer Estructurado Negro" data-price="75.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imajen 4.jpg" alt="Gorra deportiva negra" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Vestido De Gala En Tul Glaciado</h3>
+                        <p class="product-price">$124.99</p>
+                        <button class="btn add-to-cart" data-id="m8" data-name="Vestido De Gala En Tul Glaciado" data-price="124.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Explora nuestras categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="categoriaexplorar/mujer.avif" alt="Categoría Mujer" class="category-img">
+                    <div class="category-overlay">Mujer</div>
+                </div>
+                <div class="category-card">
+                    <img src="categoriaexplorar/hombre.jpg" alt="Categoría Hombre" class="category-img">
+                    <div class="category-overlay">Hombre</div>
+                </div>
+                <div class="category-card">
+                    <img src="categoriaexplorar/niños.jpg" alt="Categoría Niños" class="category-img">
+                    <div class="category-overlay">Niños</div>
+                </div>
+                <div class="category-card">
+                    <img src="categoriaexplorar/accesorios.jpg" alt="Categoría Accesorios" class="category-img">
+                    <div class="category-overlay">Accesorios</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <p>Recibe nuestras novedades y ofertas exclusivas directamente en tu correo</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+    
+    <div class="notification" id="notification">
+        <p>Producto añadido al carrito</p>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>nexowear</h3>
+                    <p>Tu tienda de confianza para encontrar las mejores prendas y accesorios con estilo y calidad.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="/enlacesrapidos/productos.html">Productos</a></li>
+                        <li><a href="/enlacesrapidos/ofertas.html">Ofertas</a></li>
+                        <li><a href="/enlacesrapidos/novedades.html">Novedades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="/ayuda/envios.html">Envíos</a></li>
+                        <li><a href="/ayuda/devoluciones.html">Devoluciones</a></li>
+                        <li><a href="/ayuda/preguntasfrecuentes.html">Preguntas frecuentes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Email: jarlinorozcoocampo@gmail.com</li>
+                        <li>Teléfono: 320 517 77 09</li>
+                        <li>Dirección: Argelia antioquia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 nexowear. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-  <h1>Categoría Mujer</h1>
+    <!-- Enlaces a archivos JavaScript -->
+    <script src="../script.js"></script>
+</body>
+</html>
 
-  <div class="galeria">
-    <img src="/categorias/imajen 1.avif" alt="Foto 1">
-    <img src="/categorias/imajen 2.jpg" alt="Foto 2">
-    <img src="/categorias/imajen3.webp" alt="Foto 3">
-    <img src="/categorias/imajen 4.jpg" alt="Foto 4">
-    <img src="/categorias/imagen5.webp" alt="Foto 5">
-    <img src="/categorias/imagen6.avif" alt="Foto 6">
-    <img src="/categorias/imagen7.jpg" alt="Foto 7">
-    <img src="/categorias/imagen8.webp" alt="Foto 8">
-  </div>
 
-  <!-- Botón para volver al index -->
-  <a href="../index.html" class="boton-volver">Volver al inicio</a>
-
+  <a href="../index.html" cl inicio</a>
 
 </body>
 </html>

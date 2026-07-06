@@ -1,3 +1,17 @@
+<?php
+// 1. Iniciamos el sistema de sesiones para poder verificar si el usuario ya se validó
+session_start();
+
+// 2. Si la variable 'usuario' NO existe, significa que no ha iniciado sesión
+if (!isset($_SESSION['usuario'])) {
+    // Lo expulsamos de inmediato a la pantalla de login
+    header("Location: login.php");
+    exit(); // Detiene por completo la carga del resto de la página
+}
+
+// 3. Dejamos tu conexión aquí para que el catálogo de ropa pueda usarla más abajo
+include("conexion.php"); 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,12 +29,12 @@
             <div class="logo">nexowear</div>
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="/categorias/mujeres.html">Mujer</a></li>
-                     <li><a href="/categorias/hombres.html">Hombre</a></li>
-                    <li><a href="/categorias/ninos.html">Niños</a></li>
-                    <li><a href="/categorias/accesorios.html">Accesorios</a></li>
-                    <li><a href="https://wa.me/573205177709" target="_blank"> WhatsApp</a></li>
+                    <li><a href="/nexowear/index.php">Inicio</a></li>
+                    <li><a href="categorias/mujeres.html">Mujer</a></li>
+                     <li><a href="categorias/hombres.html">Hombre</a></li>
+                    <li><a href="categorias/ninos.html">Niños</a></li>
+                    <li><a href="categorias/accesorios.html">Accesorios</a></li>
+                    <li><a href="https://wa.me/573205177709" id="whatsapp-btn" target="_blank"> Proceder al Pago</a></li>
                     <li class="cart-icon" id="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cart-count">0</span>
@@ -47,7 +61,7 @@
         <div class="hero-content">
             <h1>Descubre la nueva colección</h1>
             <p>Las mejores prendas y accesorios para renovar tu estilo"has ruido sin decir nada"</p>
-            <a href="#productos" class="btn">Comprar ahora</a>
+            
         </div>
     </section>
     
@@ -56,7 +70,7 @@
             <h2 class="section-title">Productos destacados</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="/imagenes/Camiseta  Blanca.jpg" alt="Camiseta blanca básica" class="product-img">
+                    <img src="imagenes/Camiseta  Blanca.jpg" alt="Camiseta blanca básica" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Camiseta Básica Blanca</h3>
                         <p class="product-price">$25.99</p>
@@ -64,7 +78,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="/imagenes/Jeans azul oscuro.jpg" alt="Jeans azul oscuro" class="product-img">
+                    <img src="imagenes/Jeans azul oscuro.jpg" alt="Jeans azul oscuro" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Jeans Premium Azul</h3>
                         <p class="product-price">$59.99</p>
@@ -72,7 +86,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="/imagenes/traje negro .webp" alt="Vestido elegante negro" class="product-img">
+                    <img src="imagenes/traje negro .webp" alt="Vestido elegante negro" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Traje Elegante Negro</h3>
                         <p class="product-price">$309.99</p>
@@ -80,7 +94,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="/imagenes/sudadera gris.webp" alt="Sudadera gris con capucha" class="product-img">
+                    <img src="imagenes/sudadera gris.webp" alt="Sudadera gris con capucha" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Sudadera Gris con Capucha</h3>
                         <p class="product-price">$49.99</p>
@@ -96,7 +110,7 @@
             <h2 class="section-title">Nuevos Arrivals</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="/imagenes/chaqueta marron.webp" alt="Chaqueta de cuero marrón" class="product-img">
+                    <img src="imagenes/chaqueta marron.webp" alt="Chaqueta de cuero marrón" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Chaqueta de Cuero Marrón</h3>
                         <p class="product-price">$129.99</p>
@@ -104,7 +118,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="/imagenes/zapatos blancos.jpg" alt="Zapatos deportivos blancos" class="product-img">
+                    <img src="imagenes/zapatos blancos.jpg" alt="Zapatos deportivos blancos" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Zapatos Deportivos Blancos</h3>
                         <p class="product-price">$89.99</p>
@@ -112,7 +126,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="/imagenes/bolso negro.webp" alt="Bolso de cuero negro" class="product-img">
+                    <img src="imagenes/bolso negro.webp" alt="Bolso de cuero negro" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Bolso de Cuero Negro</h3>
                         <p class="product-price">$75.99</p>
@@ -120,7 +134,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="/imagenes/gorra negra.jpeg" alt="Gorra deportiva negra" class="product-img">
+                    <img src="imagenes/gorra negra.jpeg" alt="Gorra deportiva negra" class="product-img">
                     <div class="product-info">
                         <h3 class="product-name">Gorra Deportiva Negra</h3>
                         <p class="product-price">$24.99</p>
@@ -135,20 +149,20 @@
         <div class="container">
             <h2 class="section-title">Explora nuestras categorías</h2>
             <div class="categories-grid">
-                <div class="category-card">
-                    <img src="/categorias/categoriaexplorar/mujer.avif" alt="Categoría Mujer" class="category-img">
+    <div class="category-card">
+                    <img src="categorias/categoriaexplorar/mujer.avif" alt="Categoría Mujer" class="category-img">
                     <div class="category-overlay">Mujer</div>
                 </div>
                 <div class="category-card">
-                    <img src="/categorias/categoriaexplorar/hombre.jpg" alt="Categoría Hombre" class="category-img">
+                    <img src="categorias/categoriaexplorar/hombre.jpg" alt="Categoría Hombre" class="category-img">
                     <div class="category-overlay">Hombre</div>
                 </div>
                 <div class="category-card">
-                    <img src="/categorias/categoriaexplorar/niños.jpg" alt="Categoría Niños" class="category-img">
+                    <img src="categorias/categoriaexplorar/niños.jpg" alt="Categoría Niños" class="category-img">
                     <div class="category-overlay">Niños</div>
                 </div>
                 <div class="category-card">
-                    <img src="/categorias/categoriaexplorar/accesorios.jpg" alt="Categoría Accesorios" class="category-img">
+                    <img src="categorias/categoriaexplorar/accesorios.jpg" alt="Categoría Accesorios" class="category-img">
                     <div class="category-overlay">Accesorios</div>
                 </div>
             </div>
@@ -212,5 +226,32 @@
 
     <!-- Enlaces a archivos JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Esperamos a que la página cargue para activar el botón
+        document.addEventListener("DOMContentLoaded", function() {
+            const botonWhatsApp = document.getElementById('whatsapp-btn');
+            
+            if (botonWhatsApp) {
+                // Cuando el usuario haga CLIC en el botón, se ejecuta esto:
+                botonWhatsApp.addEventListener("click", function(evento) {
+                    const carrito = document.getElementById('cart-items').innerText;
+                    const total = document.getElementById('cart-total-price').innerText;
+                    const telefono = "573205177709";
+
+                    // Si el carrito está vacío o tiene el mensaje por defecto
+                    if (carrito.includes("vacío") || carrito.trim() === "") {
+                        botonWhatsApp.href = `https://wa.me/${telefono}?text=¡Hola!%20Quiero%20ver%20sus%20productos.`;
+                        return;
+                    }
+
+                    // Si hay productos, construimos el mensaje con lo que hay en pantalla
+                    let mensaje = `¡Hola! 👋 Quiero realizar el siguiente pedido:\n\n${carrito}\n\n💰 Total: ${total}`;
+                    
+                    // Actualizamos el enlace con el mensaje lleno
+                    botonWhatsApp.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                });
+            }
+        });
+    </script>
 </body>
 </html>

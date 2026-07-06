@@ -1,54 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Categoría ninos</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-family: sans-serif;
-    }
-
-    .galeria {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px;
-    }
-
-    .imagen-cuadro {
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .imagen-cuadro img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nexowear - Tu tienda de ropa online</title>
+    <!-- Enlaces a archivos CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">nexowear</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="/nexowear/categorias/mujeres.html">Mujer</a></li>
+                     <li><a href="/nexowear/categorias/hombres.html">Hombre</a></li>
+                    <li><a href="/nexowear/categorias/ninos.html">Niños</a></li>
+                    <li><a href="/nexowear/categorias/accesorios.html">Accesorios</a></li>
+                    <li><a href="https://wa.me/573205177709" target="_blank"> Proceder al Pago</a></li>
+                    <li class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                        
+                        <div class="cart-dropdown" id="cart-dropdown">
+                            <h3>Carrito de Compras</h3>
+                            <div class="cart-items" id="cart-items">
+                                <!-- Los items del carrito se cargarán aquí dinámicamente -->
+                                <p id="empty-cart-message">Tu carrito está vacío</p>
+                            </div>
+                            <div class="cart-total">
+                                <span>Total:</span>
+                                <span id="cart-total-price">$0.00</span>
+                            </div>
+                            <button class="checkout-btn">Proceder al pago</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pequeños Grandes Estilos</h1>
+            <p>Ropa Comoda,Resistente y LLena De Color Para Cada Aventura </p>
+            
+        </div>
+    </section>
+    
+    <section id="productos" class="featured-section">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="nino1.jpeg" alt="Pantalones de tiro alto" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Chaqueta Biker de Cuero</h3>
+                        <p class="product-price">$85.99</p>
+                        <button class="btn add-to-cart" data-id="n1" data-name="Chaqueta Biker de Cuero" data-price="85.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="nino2.webp" alt="suéter blanco" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Chaqueta Denim Clásica</h3>
+                        <p class="product-price">$59.99</p>
+                        <button class="btn add-to-cart" data-id="n2" data-name="Chaqueta Denim Clásica" data-price="59.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="nino3.avif" alt="Vestido elegante negro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Conjunto de Invierno Cozy</h3>
+                        <p class="product-price">$209.99</p>
+                        <button class="btn add-to-cart" data-id="n3" data-name="Conjunto de Invierno Cozy" data-price="209.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="nino4.jpg" alt="Chaqueta Denim Oversize" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">chaqueta Bomber Negra</h3>
+                        <p class="product-price">$89.99</p>
+                        <button class="btn add-to-cart" data-id="n4" data-name="Chaqueta Denim Oversize" data-price="49.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-section">
+        <div class="container">
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="nino5.webp" alt="Chaqueta de cuero marrón" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Bañador Tropical</h3>
+                        <p class="product-price">$129.99</p>
+                        <button class="btn add-to-cart" data-id="n5" data-name="Bañador Tropical" data-price="129.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="nino6.webp" alt="Zapatos deportivos blancos" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Vestido de Rayas</h3>
+                        <p class="product-price">$129.99</p>
+                        <button class="btn add-to-cart" data-id="n6" data-name="Vestido de Rayas" data-price="129.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="nino7.jpg" alt="Bolso de cuero negro" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Conjunto Palmeras</h3>
+                        <p class="product-price">$75.99</p>
+                        <button class="btn add-to-cart" data-id="n7" data-name="Conjunto Palmeras" data-price="75.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="nino8.jpg" alt="Gorra deportiva negra" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Conjunto urbano</h3>
+                        <p class="product-price">$124.99</p>
+                        <button class="btn add-to-cart" data-id="n8" data-name="Conjunto urbano" data-price="124.99" data-img="/api/placeholder/500/600">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Explora nuestras categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="categoriaexplorar/mujer.avif" alt="Categoría Mujer" class="category-img">
+                    <div class="category-overlay">Mujer</div>
+                </div>
+                <div class="category-card">
+                    <img src="categoriaexplorar/hombre.jpg" alt="Categoría Hombre" class="category-img">
+                    <div class="category-overlay">Hombre</div>
+                </div>
+                <div class="category-card">
+                    <img src="categoriaexplorar/niños.jpg" alt="Categoría Niños" class="category-img">
+                    <div class="category-overlay">Niños</div>
+                </div>
+                <div class="category-card">
+                    <img src="categoriaexplorar/accesorios.jpg" alt="Categoría Accesorios" class="category-img">
+                    <div class="category-overlay">Accesorios</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <p>Recibe nuestras novedades y ofertas exclusivas directamente en tu correo</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+    
+    <div class="notification" id="notification">
+        <p>Producto añadido al carrito</p>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>nexowear</h3>
+                    <p>Tu tienda de confianza para encontrar las mejores prendas y accesorios con estilo y calidad.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="/enlacesrapidos/productos.html">Productos</a></li>
+                        <li><a href="/enlacesrapidos/ofertas.html">Ofertas</a></li>
+                        <li><a href="/enlacesrapidos/novedades.html">Novedades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="/ayuda/envios.html">Envíos</a></li>
+                        <li><a href="/ayuda/devoluciones.html">Devoluciones</a></li>
+                        <li><a href="/ayuda/preguntasfrecuentes.html">Preguntas frecuentes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Email: jarlinorozcoocampo@gmail.com</li>
+                        <li>Teléfono: 320 517 77 09</li>
+                        <li>Dirección: Argelia antioquia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 nexowear. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-  <h1>Categoría ninos</h1>
-
-  <div class="galeria">
-    <div class="imagen-cuadro"><img src="/categorias/nino1.jpeg" alt="Foto 1"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino2.webp" alt="Foto 2"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino3.avif" alt="Foto 3"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino4.jpg" alt="Foto 4"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino5.webp" alt="Foto 5"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino6.webp" alt="Foto 6"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino7.jpg" alt="Foto 7"></div>
-    <div class="imagen-cuadro"><img src="/categorias/nino8.jpg" alt="Foto 8"></div>
-  </div>
-<a href="../index.html" class="boton-volver">Volver al inicio</a>
+    <!-- Enlaces a archivos JavaScript -->
+    <script src="../script.js"></script>
 </body>
 </html>
